@@ -1,0 +1,22 @@
+<p>k-life-cycle works!</p>
+<h1>Điểm: {{ point }}</h1>
+<h1>Thời gian: {{ time_left }}</h1>
+
+<h1 *ngIf="play == true">Playing Game</h1>
+
+<div class="container">
+    <div class="row">
+        <div 
+            class="col mb-1" 
+            *ngFor="let number of numbers; let i = index"
+        > 
+            <button 
+                [ngClass]="setClasses(number)"
+                (click)="playGame(number)"
+            >
+                <span *ngIf="number < 10">0{{ number }}</span>
+                <span *ngIf="number >= 10">{{ number }}</span>
+            </button>
+        </div>
+    </div>
+</div>

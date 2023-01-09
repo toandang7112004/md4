@@ -1,0 +1,15 @@
+<!-- <app-a-hello></app-a-hello>  -->
+<!-- <app-b-property></app-b-property>  -->
+ <!-- <app-c-class></app-c-class> -->
+ <!-- <app-d-event></app-d-event> -->
+<!-- <app-e-two-way></app-e-two-way> -->
+ <!-- <app-i-template></app-i-template>   -->
+ <!-- <app-k-life-cycle></app-k-life-cycle> -->
+ <!-- <app-l-input 
+ [title] = "apptitle"
+ (GateOne) = "appHandleClick($event)"
+  ></app-l-input>  -->
+ <app-l-input
+ *ngFor="let book of books , let i = index"
+  [title]="book" >
+</app-l-input>
