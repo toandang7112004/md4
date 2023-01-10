@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
+import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { AHelloComponent } from './a-hello/a-hello.component';
 import { BPropertyComponent } from './b-property/b-property.component';
@@ -13,6 +13,9 @@ import { CustomPipe } from './custom.pipe';
 import { ITemplateComponent } from './i-template/i-template.component';
 import { KLifeCycleComponent } from './k-life-cycle/k-life-cycle.component';
 import { LInputComponent } from './l-input/l-input.component';
+import { UTemplateDrivenComponent } from './u-template-driven/u-template-driven.component';
+import { VDataDrivenComponent } from './v-data-driven/v-data-driven.component';
+import { YRegisterComponent } from './y-register/y-register.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,11 +28,15 @@ import { LInputComponent } from './l-input/l-input.component';
     ITemplateComponent,
     KLifeCycleComponent,
     LInputComponent,
+    UTemplateDrivenComponent,
+    VDataDrivenComponent,
+    YRegisterComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
