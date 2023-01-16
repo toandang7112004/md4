@@ -1,0 +1,17 @@
+<h1>Danh sách danh mục sản phẩm</h1>
+<table class="table">
+  <a [routerLink]="['/category/add']" class="btn btn-danger">add</a>
+  <tr>
+    <th>STT</th>
+    <th>Tên</th>
+    <th>Action</th>
+  </tr>
+  <tr *ngFor="let category of categories; index as i">
+    <td>{{i + 1}}</td>
+    <td>{{category.name}}</td>
+    <td>
+      <a [routerLink]="[category.id + '/edit']" class="btn btn-info" >Edit</a>
+      <a ></a>
+    </td>
+  </tr>
+</table>    

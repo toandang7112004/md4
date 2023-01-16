@@ -16,6 +16,18 @@ import { LInputComponent } from './l-input/l-input.component';
 import { UTemplateDrivenComponent } from './u-template-driven/u-template-driven.component';
 import { VDataDrivenComponent } from './v-data-driven/v-data-driven.component';
 import { YRegisterComponent } from './y-register/y-register.component';
+import { RouterModule, Routes } from '@angular/router';
+import { ProductsComponent } from './tutorial-router/products/products.component';
+import { ProductAddComponent } from './tutorial-router/product-add/product-add.component';
+import { ProductDeleteComponent } from './tutorial-router/product-delete/product-delete.component';
+import { ProductEditComponent } from './tutorial-router/product-edit/product-edit.component';
+const routes: Routes = [
+  { path: '',redirectTo: 'products', pathMatch: 'full' },
+  { path: 'products',component: ProductsComponent },
+  { path: 'products/add',component: ProductAddComponent },
+  { path: 'products/:id/edit',  component: ProductEditComponent },
+  { path: 'products/:id/delete',component: ProductDeleteComponent },
+];
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,12 +43,17 @@ import { YRegisterComponent } from './y-register/y-register.component';
     UTemplateDrivenComponent,
     VDataDrivenComponent,
     YRegisterComponent,
+    ProductsComponent,
+    ProductAddComponent,
+    ProductDeleteComponent,
+    ProductEditComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]

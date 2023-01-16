@@ -1,0 +1,8 @@
+<form [formGroup]="formProfile" #formProduct="ngForm" (ngSubmit)="handleSubmit(formProduct.value)">
+  <div class="mb-3">
+    <label  class="form-label">Name</label>
+    <input formControlName="name" type="text" ngModel class="form-control" name="name" >
+    <div *ngIf="!formProfile.controls['name']?.valid && (formProfile.controls['name']?.dirty || formProfile.controls['name']?.touched) && formProfile.controls['name'].errors?.['required']" class="form-text text-danger">is required</div>
+  </div>
+  <button [disabled]="!formProfile.valid" type="submit" class="btn btn-primary">Submit</button>
+</form>
