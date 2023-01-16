@@ -1,0 +1,25 @@
+<table class="table">
+  <thead>
+    <a [routerLink]="'/add'" class="btn btn-primary">Add</a>
+    <tr>
+      <th scope="col">STT</th>
+      <th scope="col">Tên sản phẩm</th>
+      <th scope="col">Mô tả</th>
+      <th scope="col">Giá</th>
+      <th scope="col">Hoạt Động</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of products , let idx= index">
+      <th scope="row">{{++idx}}</th>
+      <td>{{product.name}}</td>
+      <td>{{product.description}}</td>
+      <td>{{product.price}}</td>
+      <td>
+        <a [routerLink]="['/products/' + product.id + '/show']" class="btn btn-danger">Chi tiết</a>
+        <a [routerLink]="[ product.id + '/edit']" class="btn btn-info">Sửa</a>
+        <a [routerLink]="[ product.id + '/delete']" class="btn btn-warning">Xóa</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
